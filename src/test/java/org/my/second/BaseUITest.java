@@ -1,13 +1,13 @@
-package java.org.my.second;
+package org.my.second;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.response.ValidatableResponse;
-import locator.registration.api.User;
-import locator.registration.api.UserClient;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pageobject.registration.api.User;
+import pageobject.registration.api.UserClient;
 
 
 public class BaseUITest {

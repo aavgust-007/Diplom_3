@@ -1,10 +1,8 @@
-package java;
-
-import locator.MainPage;
-import locator.login.LoginFunction;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.my.second.BaseUITest;
+import pageobject.MainPage;
+import pageobject.login.LoginFunction;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

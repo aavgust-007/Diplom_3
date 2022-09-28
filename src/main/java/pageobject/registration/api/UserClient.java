@@ -1,4 +1,4 @@
-package locator.registration.api;
+package pageobject.registration.api;
 
 import io.restassured.response.ValidatableResponse;
 

@@ -1,13 +1,14 @@
-package locator.login;
+package pageobject.login;
 
-import locator.BasePage;
-import locator.MainPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageobject.BasePage;
+import pageobject.MainPage;
 
 import java.time.Duration;
 
@@ -23,21 +24,25 @@ public class LoginPageButtonPersonalAccount extends BasePage {
         super(driver);
     }
 
+    @Step("Открытие страницы авторизации")
     public LoginPageButtonPersonalAccount open() {
         driver.get(URL);
         return this;
     }
 
+    @Step("Ввод email")
     public LoginPageButtonPersonalAccount enterEmail(String email) {
         driver.findElement(emailInput).sendKeys(email);
         return this;
     }
 
+    @Step("Ввод пароля")
     public LoginPageButtonPersonalAccount enterPassword(String password) {
         driver.findElement(passwordInput).sendKeys(password);
         return this;
     }
 
+    @Step("Нажатие кнопки войти")
     public MainPage enterLogInButton() {
         WebElement element = driver.findElement(logInButtonInput);
         Actions actions = new Actions(driver);
@@ -45,16 +50,19 @@ public class LoginPageButtonPersonalAccount extends BasePage {
         return new MainPage(driver);
     }
 
+    @Step("Ожидание доступности поля Email")
     public LoginPageButtonPersonalAccount waitForfieldEmail() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(logInButtonInput));
         return this;
     }
 
+    @Step("Ожидание доступности кнопки Войти")
     public LoginPageButtonPersonalAccount waitForButton() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(logInButtonInput));
         return this;
     }
 
+    @Step("Нажатие на кнопку конструктор")
     public MainPage enterDesignerButton() {
         WebElement element = driver.findElement(designerButtonInput);
         Actions actions = new Actions(driver);
@@ -62,6 +70,7 @@ public class LoginPageButtonPersonalAccount extends BasePage {
         return new MainPage(driver);
     }
 
+    @Step("Нажатие на логотип Stellar Burgers")
     public MainPage enterLabelButton() {
         WebElement element = driver.findElement(labelButtonInput);
         Actions actions = new Actions(driver);
@@ -69,6 +78,7 @@ public class LoginPageButtonPersonalAccount extends BasePage {
         return new MainPage(driver);
     }
 
+    @Step("Отображение кнопки Войти")
     public boolean isEntranceLabel() {
         return driver.findElement(logInButtonInput).isDisplayed();
     }

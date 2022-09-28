@@ -1,10 +1,8 @@
-package java;
-
 import io.restassured.response.ValidatableResponse;
-import locator.login.LoginPageButtonPersonalAccount;
-import locator.registration.Registration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pageobject.login.LoginPageButtonPersonalAccount;
+import pageobject.registration.Registration;
 
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.junit.jupiter.api.Assertions.*;

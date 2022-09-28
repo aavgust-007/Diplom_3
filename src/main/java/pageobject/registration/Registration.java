@@ -1,13 +1,14 @@
-package locator.registration;
+package pageobject.registration;
 
-import locator.BasePage;
-import locator.login.LoginPageButtonPersonalAccount;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageobject.BasePage;
+import pageobject.login.LoginPageButtonPersonalAccount;
 
 import java.time.Duration;
 
@@ -33,43 +34,50 @@ public class Registration extends BasePage {
         return new LoginPageButtonPersonalAccount(driver);
     }
 
+    @Step("Открытие страницы регистрации")
     public Registration open() {
         driver.get(URL);
         return this;
     }
 
+    @Step("Ожидание поля Имя")
     public Registration waitForButtonAccount() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(nameInput));
         return this;
     }
 
+    @Step("Ввод в поле Имя")
     public Registration enterName(String name) {
         driver.findElement(nameInput).sendKeys(name);
         return this;
     }
 
+    @Step("Ввод в поле email")
     public Registration enterEmail(String email) {
         driver.findElement(emailInput).sendKeys(email);
         return this;
     }
 
+    @Step("Ввод в поле пароль")
     public Registration enterPassword(String password) {
         driver.findElement(passwordInput).sendKeys(password);
         return this;
     }
 
+    @Step("Ожидание поля Имя")
     public Registration waitForButton() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(registrationButtonInput));
         return this;
     }
 
+    @Step("Ожидание кнопки Зарегистрироваться")
     public boolean waitForErrorPassword() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(errorMessagePassword));
         return true;
     }
 
+    @Step("Нажатие на кнопку Зарегистрироваться")
     public Registration enterLogInButtonErrorPassword() {
-
         WebElement element = driver.findElement(registrationButtonInput);
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();

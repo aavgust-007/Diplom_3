@@ -1,4 +1,4 @@
-package locator.registration.api;
+package pageobject.registration.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

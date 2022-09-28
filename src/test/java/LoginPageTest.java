@@ -1,11 +1,9 @@
-package java;
-
-import locator.MainPage;
-import locator.login.LoginPasswordRecovery;
-import locator.login.LoginRegistration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.my.second.BaseUITest;
+import pageobject.MainPage;
+import pageobject.login.LoginPasswordRecovery;
+import pageobject.login.LoginRegistration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -26,7 +24,6 @@ public class LoginPageTest extends BaseUITest {
                 enterLogInButton().
                 waitForLoadMain().
                 isMainPage();
-
         assertEquals("https://stellarburgers.nomoreparties.site/", url, "the login by the log in to account button on the main page does not work");
     }
 
@@ -45,7 +42,6 @@ public class LoginPageTest extends BaseUITest {
                 enterLogInButton().
                 waitForLoadMain().
                 isMainPage();
-
         assertEquals("https://stellarburgers.nomoreparties.site/", url, "Login via the Personal Account button does not work");
     }
 
@@ -63,7 +59,6 @@ public class LoginPageTest extends BaseUITest {
                 enterLogInButton().
                 waitForLoadMain().
                 isMainPage();
-
         assertEquals("https://stellarburgers.nomoreparties.site/", url, "login via the button in the registration form does not work");
     }
 
@@ -82,7 +77,6 @@ public class LoginPageTest extends BaseUITest {
                 enterLogInButton().
                 waitForLoadMain().
                 isMainPage();
-
         assertEquals("https://stellarburgers.nomoreparties.site/", url, "login via the button in the password recovery form does not work");
     }
 }
